@@ -1,4 +1,3 @@
-/* src/Container.js */
 import React from 'react'
 
 const Container = ({ children }) => (
