@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Auth } from 'aws-amplify'
-import { AmplifyAuthenticator } from '@aws-amplify/ui-react';
+import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import Container from './Container'
 
@@ -18,17 +18,16 @@ const Profile = () => {
   }
   return (
     <Container>
-      <AmplifyAuthenticator>
-        {({ signOut, user }) => (
+      <Authenticator>
+        {({ signOut, userInfo }) => (
           <main>
             <h1>Profile</h1>
             <h2>Username: {user.username}</h2>
             <h3>Email: {user.email}</h3>
-            <h4>Phone: {user.phone_number}</h4>
             <button onClick={signOut}>Sign out</button>
           </main>
         )}
-        </AmplifyAuthenticator>
+        </Authenticator>
     </Container>
   );
 }
